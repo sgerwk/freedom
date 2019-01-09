@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# the programming sequences
+#
+# programming usbmon-9.txt
+# programming -33 usbmon-*.txt
+
+N=34
+[ "$1" = "-33" ] && N=33 && shift 1
+[ "$1" = "-35" ] && N=35 && shift 1
+
+if [ $# -lt 1 ];
+then
+	echo "pass the usbmon file(s)"
+	exit 1
+fi
+
+grep "40 = $N" $*	| \
+cut -d= -f2		| \
+tr -d ' '		| \
+cut -c 7-		| \
+cat
+# sed 's,..,& ,g'
+
