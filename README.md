@@ -33,7 +33,7 @@ According to USB HID, the first byte of each report is its ID, identifying the k
 0x34	remote control programming
 0x35	end of programming
 0x41	answer to the above three reports
-'''
+```
 
 First request
 -------------
