@@ -22,6 +22,7 @@ Report ID
 
 According to USB HID, the first byte of each report is its ID, identifying the kind of report this one is. In this protocol, the IDs appears to be:
 
+```
 0x31	first report
 0x56	answer to the first report
 
@@ -32,6 +33,7 @@ According to USB HID, the first byte of each report is its ID, identifying the k
 0x34	remote control programming
 0x35	end of programming
 0x41	answer to the above three reports
+'''
 
 First request
 -------------
@@ -50,7 +52,9 @@ Programming
 
 These reports are only sent when one of the devices the remote controls is changed. This programming operation is done by sending reports of ID `0x33` and ID `0x34`. The reports of ID `0x33` are almost all the same, like:
 
-`333f3f3f3f343f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f003434343400343434`
+```
+333f3f3f3f343f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f3f003434343400343434
+```
 
 Seen a whole, and removing the first byte (the report ID), they form a block that starts and ends with some `0x3f`, but the large central part contains only `0x34`.
 
